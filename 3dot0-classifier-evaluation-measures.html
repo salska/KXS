@@ -1,0 +1,115 @@
+<div id="content"><p>links: |  <a href="200-projects-moc">Projects</a> | <a href="110-slipbox-moc">Slipbox</a> | <a href="100-home">Home</a> | <a href="180-technical-moc">Technical</a> |</p>
+
+<h1 id="research-and-discuss-the-advantages-and-disadvantages-of-different-classification-evaluation-measures"><strong>Research and discuss the advantages and disadvantages of different classification evaluation measures.</strong></h1>
+
+<p>Name: Oran Kabay </p>
+
+<p>Matriculation Number: 200014479  </p>
+
+<p>Tutor: Alan Miller </p>
+
+<p>Date: 27th November 2020 </p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Machine Learning is used throughout the developed world to make advances in technology. For example, machine learning can be used to determine which cells in somebody’s body are cancerous cells. This is just one example at how machine learning models are used to improve society. However, the issue arises in evaluating how useful a model is in data analysis. There are several different types of metrics to evaluate machine learning models, all with their advantages and disadvantages. This essay has chosen three powerful, but different, classification evaluation measures and analyses the pros and cons of each one. The three metrics that will be examined are: Accuracy; Precision; Recall; Log Loss; F1 Score. There are actually 5 measures listed? </p>
+
+<h1 id="classifiers-and-classification-evaluation-metrics">Classifiers and Classification Evaluation Metrics</h1>
+
+<p>To fully understand the different classification evaluation metrics analysed within the essay, we must understand what a classifier is and its function. Classifiers are an important branch of machine learning that is used to map input data into predefined classes. For example, classifiers can be used to categorise a customer who is applying for a bank loan as low risk or high risk of defaulting on payments. </p>
+
+<p>Different types of classifiers analyse data sets to complete a certain task in different ways meaning some are better at handling certain data sets for specific tasks better than others. Some examples classifiers include Regression Trees, Neural Networks etc. Moreover, data sets themselves will most likely not be balanced. For example, if a city’s population is divided into two races it is most likely that there will be a greater population of one race over the other. This would be an unbalanced data set and are more common than balanced data sets. Although machine learning is extremely advanced in completing tasks, the classifiers still make errors. This is where classification evaluation metrics come in. </p>
+
+<p>These measures are a group of different techniques used to evaluate how successful a classifier was in completing a certain task. The type of metric used is dependent on the purpose of the classifier’s task. These metrics take into four different outcomes of classification predictions: </p>
+
+<p>True Positive is an outcome where the classifier model makes a correct prediction for a positive class. Thus, True Negative is when the model makes a correct predication for a negative class. In turn, False Positive is an incorrect prediction for a positive class and an incorrect prediction for a negative class is a False Negative. The number of true cases is for when the classifier’s prediction is correct whilst the false cases are for when it fails. These four different outcomes are used in different classification evaluation systems to determine how successful a model is. </p>
+
+<h1 id="confusion-matrix">Confusion Matrix</h1>
+
+<p>A confusion matrix is a visual diagram used to display the true and false positives and negatives of a classifier model. These four values are of course displayed in matrix form as shown in Figure 1: </p>
+
+<p><img src="confusionmatrixdotpng" alt="confusionmatrix.png" /></p>
+
+<p>A picture containing website</p>
+
+<p>Description automatically generated </p>
+
+<p>Figure 1: Confusion Matrix [7] </p>
+
+<p>These are for all data sets and for binary classifiers – classifiers where the prediction is either true or false. </p>
+
+<h1 id="accuracy">Accuracy</h1>
+
+<p>Calculating the accuracy of a classifier evaluates how frequently the classifier makes a correct prediction. This is done by dividing the number of total correct predictions by the total number of predictions and multiplying it by 100 to give a percentage of how accurate the classifier is. It can be used on almost any classifier with any balanced set of data. Although this evaluation metric is useful, it alone does not fully determine whether a classifier is functioning correctly.  </p>
+
+<p>For example, a classifier that is tasked with determining a group of one hundred people have a deadly virus the accuracy for the model to be working correctly needs to be 100%. Otherwise, the consequences of the smallest error could have a very negative impact despite an extremely high accuracy that is less than 100%.  However, for some scenarios all that is required is an accuracy above 90% for a model to be successful – it is too dependent on the context of the task. An example could be a model for determining the distribution of blueberries within blueberry muffins – a small error margin here would not deem the model a failure. This shows that despite accuracy being useful for some, it “is not a good measure to evaluate a model” [2] in some contexts.  </p>
+
+<p>Moreover, accuracy can become very deceptive when there is an imbalance in the data set. For a scenario where the model’s accuracy is 86%, the True Negative is 85% and the 1% is True Positive whilst the False Positive is 9% and False Negative make up the remaining 5%. Despite such a high accuracy, it gives a false sense of how well the model is working. Although 85% out of the 90% negative predictions were correct which is extremely good, only 1 of the 10% positive guesses where correct. This means that 90% of the positive predictions where people who in fact did not have the virus – showing how a high accuracy does effectively evaluate a model. </p>
+
+<h1 id="precision">Precision</h1>
+
+<p>The precision of a classifier “answers the question” [1] the classifier was tasked with for a particular data set. To calculate the precision, one must take the number of true positives and divide it by the sum of true positive plus the sum of false positives. Then you must multiply this calculated value by 100 to get the precision as a percentage. This is to figure out what “proportion of positive identifications was actually correct” [4]. Unlike accuracy, precision directly answers the question, allowing for a more successful evaluation of a classifier model. It is especially useful in the circumstance of an unbalanced data set as it can narrowly pinpoint whether we want to specifically analyse the Negative predictions or the Positive predictions. </p>
+
+<p>Returning to the previous example for accuracy regarding verifying how many of a group of one hundred people have a deadly virus, we can calculate the precision. Where the True Positive is 1% and the False Positive is 9%, the Precision of this model is calculated to be 1/10 or 10%. This shows the true nature of the model is, stating that 9 of the 10 people predicted to have the virus were actually negative. Although this is more useful than accuracy, precision in this context does not directly answer the question. Knowing that some people are falsely labelled as patients with the virus is less meaningful than understanding how many people were falsely predicted to not have the virus.  </p>
+
+<h1 id="recall">Recall</h1>
+
+<p>To calculate the recall of a classifier is to determine “what proportion of actual Positives is correctly classified” [5]. Firstly, one must take the number of true positives and divide it by the sum of true positive plus the sum of false negatives. This will show how many of the total positives were predicted correctly. Secondly, you must multiply this calculated value by 100 to get the recall as a percentage. Similar to precision, recall is extremely useful with unbalanced data sets as it can produce information that directly answers the purpose of the task.  </p>
+
+<p>For the previous example, the recall of the model can be calculated. Where the True Positive is 1%, the False Negative is 5%, the recall of this classifier is 1/6 or 16.7% (to 3 significant figures). This calculation shows that of all the of positive cases, the classifier was only able to predict 16.7% of them to be a positive case – leaving 83.3% of the positive cases of the deadly virus to be incorrectly predicted. In this context, Recall was extremely useful in determining the large faults in the system. If one were to go off the accuracy it would be assumed that the model was extremely efficient. Yet, upon further analysis via the classification evaluation methods precision and recall, this model is extremely unreliable and dangerous – misleading several individuals and allowing the virus to spread further.  </p>
+
+<p>For this specific example, recall is more important than precision and accuracy. This is because it directly answers the question by showing how many people with the virus were predicted to be safe. The importance of precision and recall classification evaluation metrics changes dependent on the context. </p>
+
+<h1 id="f1-and-f-beta-scores">F1 and F-Beta Scores</h1>
+
+<p>One major flaw with relying on only precision or recall when evaluating a classifier model is the other evaluation measure is ignored. F1 Score solves this issue by calculating the “harmonic mean” [5] of both precision and recall. This evaluation metric is used to measure the rate of performance of a classifier model and can be used for any data set. The value for F1 Score will always be between 0 and 1 where “The greater the F1 Score, the better is the performance of our model” [6]. In order to calculate the F1 Score of a model, one must multiply the precision by the recall. Next, divide this value by the sum of precision and recall. Finally, multiply this value by 2. </p>
+
+<p>Returning to the previous example, where the precision is 1/10 and the recall is 1/6, the F1 Score is calculated to be 1/8 or 0.125. This shows how poorly the model is at determining how many people out of the group of one hundred have the virus from those that do not have the virus. One main issue with using F1 Score to evaluate a model is that it gives equal weight to both recall and precision. This leads to the calculated F1 Score not being as reliable as intended as despite recall being more important than precision in this scenario, they are given equal weight.  </p>
+
+<p>An alternative version of this where the weight of each variable can change dependent on the user. This in turn makes F-Beta a more reliable way of evaluating a classifier as sometimes precision is more important than recall and vice-verse. The equation to calculate the F-Beta Score is shown in Figure 2: </p>
+
+<p>A picture containing text</p>
+
+<p>Description automatically generated </p>
+
+<p>Figure 2: F-Beta Score Equation [7] </p>
+
+<p>The new variable ß can be one of three different values that re commonly used to change the weight of precision and recall [7]: </p>
+
+<p>Where ß equals 0.5, there is more weight on the precision value and less on the recall value. Where ß equals 2, there is less weight on the precision value and more on the recall value. For ß equals 1, there is equal weight for both recall and precision values.  </p>
+
+<p>For the previous example where recall is more important, it would be appropriate to calculate the F-Beta Score where ß is equal to 2. The result of the calculation is 125/256 or 0.488 (to 3 significant figures). This value is the most reliable in determining the performance of this particular classifier model when compared to F1 Score and the other commonly used F-Beta Score versions.  </p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>A range of classification evaluation measures have been analysed in and used to test a self-curated example. These advantages and disadvantages of each evaluation metric have been thoroughly examined, determining the most effective measures to evaluate a classifier. Although accuracy is a keyway to evaluate a machine learning model, it can be quite deceptive in how successful the model is. This is where precision and recall are used to determine how successful a classifier is with F Scores using both of these values to conclude how effective a model is via its rate of performance. Overall, there is no one way that will always competently evaluate how successful a classifier is in performing their task. There are only different ways to evaluate different types of classifier where the data sets and the purpose of the model change how it can be assessed.  </p>
+
+<h1 id="references">References</h1>
+
+<p>[1] https://turi.com/learn/userguide/evaluation/classification.html#precision_recall </p>
+
+<p>[2] https://www.analyticsvidhya.com/blog/2020/10/how-to-choose-evaluation-metrics-for-classification-model/ </p>
+
+<p>[3] https://developers.google.com/machine-learning/crash-course/classification/accuracy </p>
+
+<p>[4] https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall </p>
+
+<p>[5] https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226 </p>
+
+<p>[6] https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234 </p>
+
+<p>[7] https://machinelearningmastery.com/fbeta-measure-for-machine-learning/ </p>
+
+<p>[8] https://dataaspirant.com/six-popular-classification-evaluation-metrics-in-machine-learning/#t-1596718010205 </p>
+
+<div class="backlinks">
+
+<h2 id="backlinks">Backlinks</h2>
+
+<ul>
+<li><a href="110-slipbox-moc">110 Slipbox MOC</a></li>
+<li><a href="180-technical-moc">180 Technical MOC</a></li>
+</ul>
+
+</div>
+</div>

@@ -1,0 +1,141 @@
+<div id="content"><h1 id="welcome-to-the-method">Welcome to The Method</h1>
+
+<p>This is a short introduction to the functionality of<span class="tag">ZettelkastenMethod</span></p>
+
+<p>Make sure to check out our forums to discuss knowledge work and this app with others:<br />
+<a href="http://forum.zettelkasten.de">http://forum.zettelkasten.de</a></p>
+
+<h2 id="the-interface">The Interface</h2>
+
+<p>The user interface has four important parts:</p>
+
+<ol>
+<li>The Editor. This is this big area to the right. Here you can read and write your content. Like this text.</li>
+<li>The Omnibar. The Omnibar commands the list of results. It filters all the files in your archive via full text search.</li>
+<li>The List. It displays your notes to the left of the editor. Depending on what the Omnibar contains, it either shows all your notes or a set of notes that match your current search, depending on the content of the Omnibar. </li>
+<li>Saved Searches. All the way to the left, there are the saved searches. You can define a search term and then just click on the button. Very useful if you go to a set of notes frequently.</li>
+</ol>
+
+<p>In the "Help" menu, you will find "Show App Guide" which explains the interface to you anytime.</p>
+
+<p>Let us dive a little bit deeper.</p>
+
+<h3 id="the-editor">The Editor</h3>
+
+<p>We assume that you know how to type. <em>The Archive</em> highlights what you type according to your theme and to the Markdown syntax. The Markdown syntax gives you two features.</p>
+
+<ol>
+<li>It lets you make a plain text file more readable even when you wouldn't have syntax highlighting. <em>The Archive</em>'s highlighting enhances this effect. Markdown quickly becomes second nature.</li>
+<li>It gives you the opportunity to make use of many export functions (convert Markdown to LaTeX to PDF for example). This makes <em>The Archive</em> work better with distraction free editors (highly recommended over bloated software).</li>
+</ol>
+
+<p>For a full documentation have a look at this website from the creator of Markdown: https://daringfireball.net/projects/markdown/basics</p>
+
+<h4 id="basic-textual-markup">Basic Textual Markup</h4>
+
+<p>Let's demonstrate the markup in text.</p>
+
+<p>The line above with the 4 <code>#</code> signs demonstrates a level 4 heading. The more hashes you add, the deeper the level of the heading is. This is useful to structure longer texts but is not used that often in notes.</p>
+
+<ul>
+<li>Lists are useful.</li>
+<li>They are especially useful when list items get longer, as <em>The Archive</em> wraps the lines around and adds indentation to guide your eye along the list when you read.<br />
+<ol><br />
+<li>Nested lists work, too.</li><br />
+<li>And, as you see, you can number items to make the list an ordered list instead of an unordered list.</li><br />
+</ol></li>
+<li>And so you may start an overview.</li>
+</ul>
+
+<p>You separate paragraphs of text with empty lines, not just with single line breaks. Inside paragraphs, you can <strong>embolden parts of text</strong> like this to really stress something, or <em>italicize text</em> for a much milder emphasis. Or you <strong><em>Italicize emboldened text</em></strong> for maximum emphasis. Shouting in all caps is optional and not recommended during office hours. Be smart and <em>emphasize</em> with style.</p>
+
+<p>If you want to add code or put something that would be recognized as Markdown in verbatim, <code>you can use backticks, disabling *emphasis*, too</code>.</p>
+
+<p>Quoted from <a href="https://daringfireball.net/projects/markdown/basics">the Markdown guide</a>:</p>
+
+<blockquote>
+  <p>Blockquotes are indicated using email-style '>' angle brackets.</p>
+</blockquote>
+
+<h4 id="code-blocks">Code blocks</h4>
+
+<p>Then there's verbatim or "code" blocks,</p>
+
+<pre><code>created by either block-indenting text 
+with 4 spaces or a tabulator;
+</code></pre>
+
+<p>or you can use</p>
+
+<pre><code>GitHub-style code fences which ease copy &amp; pasting.
+</code></pre>
+
+<p>Themes for <em>The Archive</em> are recommended to use monospace fonts. Monospace fonts have predictable character widths which is useful for lists, tables and more. You could customize a theme to only use monospace fonts for code blocks, though.</p>
+
+<h3 id="the-omnibar">The Omnibar</h3>
+
+<p>The <a href="omnibar">Omnibar</a> is the place to interact with your archive. It's the search-and-create box at the top of the app, just like in a web browser.</p>
+
+<p>Imagine <em>The Archive</em> as a remote control for your directory of plain text files. Familiarize yourself with the shortcut to access the Omnibar quickly from anywhere: ⌘L. You'll need this a lot to navigate in your archive.</p>
+
+<p>When the Omnibar is focused, you can use the arrow keys to navigate around in the list of found notes. You can even press the shift key to select multiple notes from there. No need to click inside the search result list with the mouse.</p>
+
+<p>From the Omnibar, hit the tabulator key to jump to the note editor quickly.</p>
+
+<p>Typing into the Omnibar filters your notes to match your search in real time. Which brings us to the next point...</p>
+
+<h4 id="search-expressions">Search Expressions</h4>
+
+<p>The Omnibar performs simple text search, but also offers boolean search expressions and other search niceties.</p>
+
+<p>For example, when you surround a phrase in quotation marks, "like this", it will search for the phrase, and not the single words it's made of.</p>
+
+<p>Then there are logical operators:</p>
+
+<ul>
+<li>Operators are all caps: <code>AND</code>, <code>OR</code>, and <code>NOT</code>.</li>
+<li><code>foo bar baz</code> is equivalent to <code>foo AND bar AND baz</code>.</li>
+<li>Instead of writing <code>NOT</code>, you can prefix a word or phrase or parens with <code>!</code>: <code>NOT b</code> is <code>!b</code> and will show notes that have no "b".</li>
+<li>Phrases win over the exclamation mark: <code>"!b"</code> is a phrase search for "!b", matching the literal exclamation mark.</li>
+<li>Instead of surrounding something with quotation marks, escaping with a backslash works, too: <code>\!b</code> will treat the exclamation mark as part of the search string.</li>
+<li>Escaping quotation marks inside phrase searches will also work: <code>hello "you \"lovely\" specimen"</code></li>
+<li>You can parenthesize expressions to group them. For example, <code>!(foo OR (baz AND !bar)</code> is equivalent to writing <code>!foo OR !baz AND !foo OR !bar</code>.</li>
+</ul>
+
+<p>A real-world example: <code>"the archive" OR&lt;span class="tag"&gt;zettelkasten&lt;/span&gt;</code> will not match <code>the</code> and <code>archive</code> alone, as you'd expect from phrase searches. You will get all notes that are tagged with<span class="tag">zettelkasten</span>, contain the phrase "the archive", or both.</p>
+
+<p>If you're into algorithms, please note that OR and AND do not have correct operator precedence; I found that doesn't matter for searching notes. So if in doubt, better use parens to group parts of the search!</p>
+
+<h3 id="the-list-of-notes">The List of Notes</h3>
+
+<p>The list of notes is either the complete list of all of your notes or a set of notes that match your current search depending on the content of the Omnibar. </p>
+
+<h2 id="special-features-just-for-you">Special Features - Just for You</h2>
+
+<p>So far, so good. Now let's take a look at a couple of special features. </p>
+
+<h3 id="clickable-tags">Clickable Tags</h3>
+
+<p>You can elevate a word to a tag by putting a hash in front of it. You see that<span class="tag">tags</span> are highlighted. You can click on a<span class="tag">tag</span> and ctrl + enter will list all notes that contain the tag. </p>
+
+<p>If you think of tags as<span class="tag">markers</span> for sets of notes you will get it right. </p>
+
+<h3 id="links-to-other-notes">Links to Other Notes</h3>
+
+<p>If you surround a word or a <a href="string">string</a> with double brackets, <em>The Archive</em> makes it clickable like it does for tags, see: <a href="4dot1dot3-welcome-to-the-method">4.1.3 Welcome to The Method</a> It is a search command you can click on. If you are specific enough with your search term you can link to a specific file. <em>The Archive</em> will automatically display a good match from the search results in the note editor to pull this effect off.</p>
+
+<p>To make links really specific, we recommend putting a unique identifier in the file name. Then the search command (serving as a link) can be very short: <a href="4dot1dot3-welcome-to-the-method">4.1.3 Welcome to The Method</a> will point to the same note but with less noise.</p>
+
+<p>You may ask why we didn't just include a direct linking feature. We designed it like that because we want your note archive to also work with other apps. That means <em>The Archive</em> won't use anything that is not replicable with most other text editors. A proprietary link format isn't replicable, but a textual reminder to search for whatever is written between the double square brackets is. We call this approach to making our app not box you in "Software Agnostic Programming".<br />
+<span class="tag">retribution</span></p>
+
+<p>Of course, we think this app is the best. <em>The Archive</em> streamlines many processes you may need for effective note taking and creative knowledge work. But we don't want to box you in with proprietary file formats or anything like that. We think that you should decide what is best for your and don't want to interfere with that decision. (<em>The Archive</em> is still the best thing since sliced bread... just saying.)</p>
+
+<h3 id="saved-searches">Saved Searches</h3>
+
+<p>Some searches have to be done repeatedly. Quite often you will need to return to the same set of notes. For that reason, we included the saved search feature.</p>
+
+<p>You can assign hotkeys for specific searches. Then you can access a specific set of notes in an instant.</p>
+
+<p>The search expression syntax of the Omnibar work for Saved Searches, too. You can save the search for <code>#outline OR&lt;span class="tag"&gt;draft&lt;/span&gt;</code> and get back to all your current projects quickly.</p>
+</div>

@@ -1,0 +1,43 @@
+<div id="content"><p>links: <a href="2dot6-home-network">2.6 Home Network</a></p>
+
+<h3 id="what-are-the-best-settings-to-achieve-maximum-wifi-throughput">What are the best settings to achieve maximum wifi throughput?</h3>
+
+<ul>
+<li><p>Through a process of trial and error I was able to modify the frequency band of the Orbi Main and Orbi satellite to see how the latency improves by performing ping tests.</p></li>
+<li><p>MacBook Pro (192.168.2.8) was operating over wifi</p></li>
+<li>NAS Server (192.168.2.35) was wired ethernet</li>
+</ul>
+
+<h3 id="perform-the-test-from-the-macbook">Perform the test from the MacBook</h3>
+
+<ul>
+<li><p>sudo ping -f -c 83333 -s 1500 192.168.2.35</p></li>
+<li><p>2512 packets transmitted, 2000 packets received, 20.4% packet loss<br />
+round-trip min/avg/max/stddev = 3.915/12.624/50.961/6.058 ms</p></li>
+<li><p>See the following method for calculating the <a href="https://stackoverflow.com/questions/4575537/calculate-upload-download-speed-by-ping">bandwidth from ping</a></p></li>
+</ul>
+
+<p>channel settings (2.5G/5G) 03/40 {macbook>nas} 5ms (20% error)   {nas>macbook} 5ms (30% error)<br />
+channel settings (2.5G/5G) 06/40 {macbook>nas} 13ms (20% error)   {nas>macbook} 10ms (30% error)<br />
+channel settings (2.5G/5G) 09/40 {macbook>nas} 10ms (320% error)   {nas>macbook} 10ms (30% error) </p>
+
+<p>Two immediate questions arise:</p>
+
+<p><a href="https://www.dnsstuff.com/reduce-packet-loss">How can we monitor and reduce the packet loss</a></p>
+
+<p><a href="2dot6dot1-how-can-we-reduce-the-round-trip-time">2.6.1 How can we reduce the round trip time</a></p>
+
+<hr />
+
+<p>tags: #27cnp75<span class="tag">network</span><span class="tag">wifi</span></p>
+
+<div class="backlinks">
+
+<h2 id="backlinks">Backlinks</h2>
+
+<ul>
+<li><a href="2dot6dot1-how-can-we-reduce-the-round-trip-time">2.6.1 How can we reduce the round trip time</a></li>
+</ul>
+
+</div>
+</div>
